@@ -17,10 +17,10 @@ Existuje zde několik definičních souborů:
 
 Pokud chceš přidat nějaké docstringy, tak to proveď v `manual.d.ts` a spusť `analyzer.py` (nebo rovnou uprav i `analyzer.d.ts`).
 
-Vytváření této dokumentace byla čistá bolest, protože prakticky vše, co v těchto definičních souborech je, jsem musel zjistit sám. K tomu posloužili 2 mnou vytvořené pomocné skripty: `extractor.js` a `analyzer.py`.
+Vytváření této dokumentace byla čistá bolest, protože prakticky vše, co v těchto definičních souborech je, jsem musel zjistit sám. K tomu posloužili 2 mnou vytvořené pomocné skripty: `extractor.js` a `analyzer.py`. Oficiální dokumentace (k celému PT) je dostupná v souboru `$CESTA_K_PT$/help/default/index.htm` a ohledně tohoto tématu je zde sekce "Script Modules", kterou doporučuji projít. Oficiální dokumentace poskytuje přehled o tom, jak moduly fungují, zatímco tento projekt je primárně o poskytnutí reference pro funkce, které lze v rámci skriptů použít.
 
 ## `extractor.js`
-`extractor.js` byl první a v tuto chvíli jsou jeho úspěchy nahrazeny jeho nástupcem (`analyzer.py`), ale je ponechán, protože jsem si téměř jist, že existuje/bude existovat situace, kdy jeho nástupce nebude stačit. Obsah souboru `extractor.js` se zkopíroval a vložil do debugovací konzole PT skriptu a následně vyhodil rozsáhly JSON soubor se všemi dostupnými funkcemi (rekurzivně zkoušel jednotlivé metody na získaných objektech a dokonce zkoušel volat i funkce s parametry). Tento JSON soubor lze pak zpracovat a na jeho základě vygenerovat `.d.ts` soubor. Bohužel se tímto způsobem nedali zjistit typy argumentů a dokonce ani počet argumentů funkcí a chyběli eventy.
+`extractor.js` byl první pomocník, ale v tuto chvíli jsou již jeho úspěchy nahrazeny jeho nástupcem (`analyzer.py`). Je ale ponechán, protože jsem si téměř jist, že existuje/bude existovat situace, kdy nástupce nebude stačit. Obsah souboru `extractor.js` se zkopíroval a vložil do debugovací konzole PT skriptu a následně vyhodil rozsáhly JSON soubor se všemi dostupnými funkcemi (rekurzivně zkoušel jednotlivé metody na získaných objektech a dokonce zkoušel volat i funkce s parametry). Tento JSON soubor lze pak zpracovat a na jeho základě vygenerovat `.d.ts` soubor. Bohužel se tímto způsobem nedali zjistit typy argumentů a dokonce ani počet argumentů funkcí a chyběli eventy.
 
 V PT skriptech lze totiž registrovat na objektech eventy. Naneštěstí registrace probíhá přes jednotnou funkci, která bere název eventu, a tyto názvy eventů nejsou nikde zaznamenány.
 

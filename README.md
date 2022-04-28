@@ -25,14 +25,14 @@ Začnu s IoT. Nevím to jistě, ale myslím, že IoT bylo už i v PT 5 a už vů
 
 Jednotlivé IoT prvky mohou obsahovat kód. Abychom ho mohli vidět/upravit/vytvořit, potřebujeme se dostat do záložky "Programming", která se nachází v dialogu prvků po kliknutí na tlačítko "Advanced". Asi všechny IoT hračičky obsahují nějaký kód již v základu, ale ten nás ve většině případů vůbec nezajímá. Kód zde můžeme psát buď v JS nebo Pythonu. Pythonu jsem se osobně v PT ani nedotkl, takže nevím, v jakém stavu je, ale JS je v hrozném stavu - nejspíše si tvůrci vytvořili vlastní JS engine a potřebuješ opravdu hluboké znalosti JS, aby jsi zvládl(a) překonat tuhle otřesnost.
 
-Tohle jako základ stačí, více v [dalším souboru](IoT/IoT.md).
+Tohle jako základ stačí, více v [dalším souboru](IoT/README.md).
 
 ## PT Script Modules
 Druhá možnost jsou tzv. PT skripty. Na ně jsem narazil jako první a také jsem zde směřoval většinu práce. PT skripty (téměř) cokoliv. Ať "jednoduchá" manipulace s pracovním prostorem, tak i složitěji vypadající věci, jako je třeba implementace dodatečných oken a možností v menu.
 
 Každý PT soubor (resp. uložení) může mít jeden svůj PT skript. Největší problém s PT skripty jsou oprávnění. Tuším, že i samotné spuštění PT skriptu vyžaduje potvrzení (i přestože mu nejsou dána žádná oprávnění) vyžaduje odkliknutí dialogového okna, což je velice nepraktické. IoT srandy toto nevyžadují, a proto také doporučuji promyslet tvůj nápad tak, aby ho bylo možné zrealizovat i přes omezený počet možností v IoT rozhraní.
 
-Zde to opět zakončím, více v [dalším souboru](Modules/Modules.md).
+Zde to opět zakončím, více v [dalším souboru](Modules/README.md).
 
 # Interaktivita
 Nyní ten největší problém, se kterým jsem se potýkal. Interaktivita. Pokud je k dispozici interaktivita s uživatelem, jde udělat spousta skvělých věcí. Naneštěstí jsem tento problém nevyřešil. Dle mých informací se to někomu jinému podařilo - ten někdo dokázal získávat pozici myši. Víc informací nevím, ale mám podezření, že se jednalo o starší verzi PT, která neměla tak "restriktivní" omezení na uživatelský vstup.

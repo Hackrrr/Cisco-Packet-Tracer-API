@@ -50,6 +50,7 @@ declare interface _IPC extends BaseClass {
 }
 
 // HEAD END
+// Definice nad tímto komentářem nejsou dostupné v dekompilovaném ptaplayer programu nebo se jedná o pomocné definice, které ve skutečnosti neexistují
 
 declare interface _UserAppManager extends BaseClass {
     addGlobalApp(..._: unknown[]): unknown;
@@ -274,7 +275,7 @@ declare interface _Network extends BaseClass {
     getDevice(deviceName: string): _Device | undefined;
     getDeviceAt(index: number): _Device;
     getDeviceCount(): number;
-    //getLinkAt(index: number): _Cable; // Nějaký rozbitý, z nějakého důvodu vrací string "object"
+    getLinkAt(index: number): _Cable; // Nějaký rozbitý, z nějakého důvodu vrací string "object"
     getLinkCount(): number;
     getTotalDeviceAttributeValue(..._: unknown[]): unknown;
 }
@@ -977,8 +978,7 @@ declare interface _DeviceFactory extends BaseClass {
     getAvailableDeviceCount(): number;
     getAvailableDeviceForTypeAt(..._: unknown[]): unknown;
     getAvailableDeviceForTypeCount(..._: unknown[]): unknown;
-    //@ts-expect-error
-    getDescriptor(_: number, _: string): unknown|null;
+    getDescriptor(_: number, __: string): unknown|null;
 }
 declare interface _ModuleFactory extends BaseClass {
     addModuleModel(..._: unknown[]): unknown;
@@ -986,8 +986,7 @@ declare interface _ModuleFactory extends BaseClass {
     getAvailableModuleCount(): number;
     getAvailableModuleForTypeAt(..._: unknown[]): unknown;
     getAvailableModuleForTypeCount(..._: unknown[]): unknown;
-    //@ts-expect-error
-    getDescriptor(_: number, _: string): unknown|null;
+    getDescriptor(_: number, __: string): unknown|null;
 }
 declare interface _CommandLog extends BaseClass {
     clear(): void;
@@ -1120,10 +1119,8 @@ declare interface BaseUI extends BaseClass {
     /** Zamezí interakci ((nejspíše) bez změny vzhledu) */
     setDisabled(value: boolean): void;
     setVisible(value: boolean): void;
-    //@ts-expect-error
-    setWidgetDisable(_: string, _: boolean): void;
-    //@ts-expect-error
-    setWidgetVisible(_: string, _: boolean): void;
+    setWidgetDisable(_: string, __: boolean): void;
+    setWidgetVisible(_: string, __: boolean): void;
 }
 declare interface _UserCreatedPDU extends BaseUI {
     activateScenario(..._: unknown[]): unknown;
@@ -1345,10 +1342,8 @@ declare interface _LogicalWorkspace extends BaseClass {
     getClusterIdForItem(_: string): string;
     getClusterItemId(_: string): UUID|NULL_UUID;
     getComponentChildCountFor(_: string): number;
-    //@ts-expect-error
-    getComponentChildForAt(_: string, _: number): unknown|null;
-    //@ts-expect-error
-    getComponentChildForByName(_: string, _: string): unknown|null;
+    getComponentChildForAt(_: string, __: number): unknown|null;
+    getComponentChildForByName(_: string, __: string): unknown|null;
     getComponentItem(deviceName: string): _ComponentItem;
     getComponentItemsCount(): number;
     getCurrentCluster(): _Cluster;

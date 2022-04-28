@@ -1,28 +1,36 @@
 from __future__ import annotations
 
-from rich import print as p
-from rich import traceback
+# Pro příjemnou práci (= formátování, barvičky) doporučuji doinstalovat modul `rich`
+# Lze zadat název výstupního souboru jako první argument (pokud není, použije se default "analyzer.d.ts")
 
-traceback.install(show_locals=True)
+try:
+    from rich import print as p
+    from rich import traceback
+
+    traceback.install(show_locals=True)
+except ModuleNotFoundError:
+    p = print
+
 import abc
-import glob
 import os
 import re
+import sys
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, TextIO
 
-OUTPUT_FILE = "analyzer.d.ts"
+OUTPUT_FILE = sys.argv[1] if len(sys.argv) >= 2 else "analyzer.d.ts"
 IDENT = "    "
 
-BASE_DIR = "ptaplayer"
-APIIPC = os.path.join(BASE_DIR, "apiipc\\")
-ENUMS_DIR = os.path.join(APIIPC, "generated", "enums\\")
-EVENTS_DIR = os.path.join(APIIPC, "generated", "events\\")
-SIM_DIR = os.path.join(APIIPC, "generated", "sim\\")
-SYSTEM_DIR = os.path.join(APIIPC, "generated", "system\\")
-UI_DIR = os.path.join(APIIPC, "generated", "ui\\")
-IPC_FACTORY_FILE = os.path.join(APIIPC, "generated", "IPCFactory.java")
-MANUL_FILE = "manual.d.ts"
+BASE_DIR = Path("ptaplayer")
+APIIPC = BASE_DIR / "apiipc"
+ENUMS_DIR = APIIPC / "generated" / "enums"
+EVENTS_DIR = APIIPC / "generated" / "events"
+SIM_DIR = APIIPC / "generated" / "sim"
+SYSTEM_DIR = APIIPC / "generated" / "system"
+UI_DIR = APIIPC / "generated" / "ui"
+IPC_FACTORY_FILE = APIIPC / "generated" / "IPCFactory.java"
+MANUL_FILE = Path("manual.d.ts")
 
 if not os.path.exists(BASE_DIR):
     p(f"Directory '{BASE_DIR}' (= decompiled ptaplayer) not found")
@@ -195,10 +203,10 @@ class MethodData(CodeGeneratable):
 
     def generate_code(self) -> str:
         if self.name == "getProcess" and self.parrent.name == "Device":
-            # Ref: C:/Program Files/Cisco Packet Tracer *VERZE*/help/default/scriptModules_customUdp.htm
+            # Ref: $CESTA_K_PT$/help/default/scriptModules_customUdp.htm
             if (
                 len(self.params) != 1
-                or parse_type(next(iter(self.params.values())).type) != "string"
+                or next(iter(self.params.values())).type != "string"
             ) and not is_method_unknown(self):
                 raise Exception("Device.getProcess() method signature differs")
             return "\n".join(
@@ -212,7 +220,7 @@ class MethodData(CodeGeneratable):
             comment = IDENT + comment + "\n"
         return (
             f"{comment}{IDENT}{self.name}({', '.join([param.generate_code() for param in self.params.values()])}):"
-            f" {parse_type(self.return_type)};{(' '+self.comment_string_after).strip()}"
+            f" {self.return_type};{' '+self.comment_string_after.strip()}"
         )
 
 
@@ -255,7 +263,7 @@ manual_header: str = ""
 
 
 def parse_enum():
-    for path in glob.glob(ENUMS_DIR + "*"):
+    for path in ENUMS_DIR.glob("*"):
         with open(path) as file:
             match = re.search(
                 r"\w+ enum (\w+)\s*{\s*((?:\w+?\(.+?\),?\s*?)+);",
@@ -271,7 +279,7 @@ def parse_enum():
 
 
 def parse_events():
-    for path in glob.glob(EVENTS_DIR + "*Event.java"):
+    for path in EVENTS_DIR.glob("*Event.java"):
         filename = os.path.basename(path)
         obj_name = filename[: -len("Event.java")]
         with open(path) as file:
@@ -291,10 +299,11 @@ def parse_events():
 
 
 def parse_objects():
-    paths = (
-        glob.glob(SIM_DIR + "*") + glob.glob(SYSTEM_DIR + "*") + glob.glob(UI_DIR + "*")
-    )
-    for path in paths:
+    for path in [
+        x
+        for g in (SIM_DIR.glob("*"), SYSTEM_DIR.glob("*"), UI_DIR.glob("*"))
+        for x in g
+    ]:
         with open(path) as file:
             obj_name = None
             parrent = None
@@ -305,7 +314,7 @@ def parse_objects():
                     parrent = match[2]
                     break
             if obj_name is None or parrent is None:
-                raise Exception("Cannot parse enum file")
+                raise Exception(f"Cannot parse object file ({file})")
             # IPC je definováno v templatu
             if obj_name == "IPC":
                 continue
@@ -317,7 +326,7 @@ def parse_objects():
             ):
                 params: dict[str, ParamData] = {}
                 for param in re.finditer(r"final (\w+) (\w+)", method[3]):
-                    params[param[2]] = ParamData(param[2], param[1])
+                    params[param[2]] = ParamData(param[2], parse_type(param[1]))
 
                 # Nevím, co s těmito .read() metodami. Třídy, které tuto metodu mají,
                 # tak ji mají jako override .read() metody na IPCData (= parrent).
@@ -330,7 +339,9 @@ def parse_objects():
                 ):
                     continue
 
-                methods[method[2]] = MethodData(method[2], method[1], params, obj_data)
+                methods[method[2]] = MethodData(
+                    method[2], parse_type(method[1]), params, obj_data
+                )
             analyzed_objects[obj_data.name] = obj_data
 
 
@@ -398,12 +409,12 @@ def parse_manual():
                             else:
                                 break
                         params[param_match[1] + suffix] = ParamData(
-                            param_match[1], param_match[2]
+                            param_match[1], parse_type(param_match[2])
                         )
 
                     methods[method_match[2]] = MethodData(
                         method_match[2],
-                        method_match[4],
+                        parse_type(method_match[4]),
                         params,
                         obj,
                         method_match[1] or "",
@@ -428,12 +439,15 @@ def merge():
     manual_object_keys = set(manual_objects.keys())
     objects_in_both = analyzed_object_keys & manual_object_keys
 
-    for obj_key in analyzed_object_keys - objects_in_both:
+    # Pokud se objekty vyskytují buď pouze v analyzed nebo jen v manual datech,
+    # tak pro ně merge řešit nemusíme
+    # BTW sorted() se volá, aby byl program determenistický, protože set je unordered
+    for obj_key in sorted(analyzed_object_keys - objects_in_both):
         merged_objects[analyzed_objects[obj_key].name] = analyzed_objects[obj_key]
-    for obj_key in manual_object_keys - objects_in_both:
+    for obj_key in sorted(manual_object_keys - objects_in_both):
         merged_objects[manual_objects[obj_key].name] = manual_objects[obj_key]
 
-    for obj_key in objects_in_both:
+    for obj_key in sorted(objects_in_both):
         analyzed_obj = analyzed_objects[obj_key]
         manual_obj = manual_objects[obj_key]
 
@@ -450,20 +464,19 @@ def merge():
         manual_meethod_keys = set(manual_obj.methods.keys())
         methods_in_both = analyzed_method_keys & manual_meethod_keys
 
-        for method_key in analyzed_method_keys - methods_in_both:
+        # Opět - pokud je metoda definováne jen v jedněch datech, merge neřešíme
+        for method_key in sorted(analyzed_method_keys - methods_in_both):
             methods[method_key] = analyzed_obj.methods[method_key]
-        for method_key in manual_meethod_keys - methods_in_both:
+        for method_key in sorted(manual_meethod_keys - methods_in_both):
             methods[method_key] = manual_obj.methods[method_key]
-        for method_key in methods_in_both:
+
+        for method_key in sorted(methods_in_both):
             analyzed_method = analyzed_obj.methods[method_key]
             manual_method = manual_obj.methods[method_key]
-            # new_params = {}
-            new_params = analyzed_method.params
+            new_params = {}
 
-            parsed_analyzed = parse_type(analyzed_method.return_type)
-            parsed_manual = parse_type(manual_method.return_type)
-
-            def resolve_type(ana: str, man: str) -> str:
+            # Porovná oba typy a vrátí
+            def resolve_type(ana: str, man: str, info: str) -> str:
                 ana = ana.strip()
                 man = man.strip()
                 if ana != man:
@@ -485,21 +498,46 @@ def merge():
                     )
                     if match is not None:
                         return (
-                            resolve_type(ana, man[: match.start()]) + " | " + match[1]
+                            resolve_type(ana, man[: match.start()], info)
+                            + " | "
+                            + match[1]
                         )
                     else:
+                        p(
+                            f"Type mismatch in analyzed and manual definitions for {analyzed_obj.name}.{method_key}(...) ({info}):\n  ana: {ana}\n  man: {man}"
+                        )
                         try:
-                            p(
-                                f"{analyzed_obj.name}.{method_key}(...):\n  ana: {ana}\n  man: {man}\n"
-                            )
-                            input("(picking type from analyzer)")
-                            return ana
+                            input("(picking type from analyzer; enter to continue)")
                         except KeyboardInterrupt:
                             exit()
+                        return ana
                 else:
                     return ana
 
-            return_type = resolve_type(parsed_analyzed, parsed_manual)
+            if is_method_unknown(manual_method):
+                new_params = analyzed_method.params
+            elif len(analyzed_method.params) != len(manual_method.params):
+                p(
+                    f"Param count mismatch for {analyzed_obj.name}.{method_key}\n  ana: {analyzed_method.params}\n  man: {manual_method.params}"
+                )
+                try:
+                    input("(picking params from analyzer; enter to continue)")
+                    new_params = analyzed_method.params
+                except KeyboardInterrupt:
+                    exit()
+            else:
+                for (x, (a, m)) in enumerate(
+                    zip(analyzed_method.params.values(), manual_method.params.values())
+                ):
+                    new_param = ParamData(
+                        a.name if m.name.strip("_") == "" else m.name,
+                        resolve_type(a.type, m.type, f"parameter {x}"),
+                    )
+                    new_params[new_param.name] = new_param
+
+            return_type = resolve_type(
+                analyzed_method.return_type, manual_method.return_type, "return type"
+            )
 
             new_method = MethodData(
                 analyzed_method.name,
@@ -516,44 +554,62 @@ def merge():
 
 def cleanup():
     for obj in merged_objects.values():
-        if obj.parrent in merged_objects:
-            parrent = merged_objects[obj.parrent]
+        next_parrent = obj.parrent
+        while next_parrent in merged_objects:
+            parrent = merged_objects[next_parrent]
+            next_parrent = parrent.parrent
+            # Ok, ten `list` tady význam má KEKW Příště musím více důvěřovat mému minulému já...
+            # Proč tady je? Proto :) Ne, bez něj to fungovat nebude. Klidně si to zkus PepeLaugh
             for method in list(obj.methods.values()):
                 if method.name in parrent.methods:
                     parrent_method = parrent.methods[method.name]
-                    if is_method_unknown(method) or (
-                        [parse_type(x.type) for x in method.params.values()],
-                        parse_type(method.return_type),
-                    ) == (
-                        [parse_type(x.type) for x in parrent_method.params.values()],
-                        parse_type(parrent_method.return_type),
-                    ):
-                        del obj.methods[method.name]
-                        continue
+
+                    # Pokud je parrent metoda neznámá, nechej tuto
                     if is_method_unknown(parrent_method):
                         continue
-                    # if len(method.params) == len(parrent_method.params):
-                    #     if len(method.params) == 1 and next(iter(method.params.values())).type == "number" and next(iter(parrent_method.params.values())).type in enums:
-                    #         del obj.methods[method.name]
-                    #         continue
-                    if (
-                        method.return_type == "number"
-                        and parrent_method.return_type in enums
+
+                    # Pokud je součsná metoda neznámá nebo se shoduje s parrentem, vymaž tuto
+                    if is_method_unknown(method) or (
+                        [x.type for x in method.params.values()],
+                        method.return_type,
+                    ) == (
+                        [x.type for x in parrent_method.params.values()],
+                        parrent_method.return_type,
                     ):
                         del obj.methods[method.name]
                         continue
 
-                    p(f"{parrent.name}.{method.name}():")
+                    # Pokud má metoda paramter nebo návratovou hodnotu typu number a parrent má typu enum, vymaž tuto
+                    if (
+                        len(method.params) == len(parrent_method.params)
+                        and len(method.params) == 1
+                        and next(iter(method.params.values())).type == "number"
+                        and next(iter(parrent_method.params.values())).type.lstrip("_")
+                        in enums
+                    ) or (
+                        method.return_type == "number"
+                        and parrent_method.return_type.lstrip("_") in enums
+                    ):
+                        del obj.methods[method.name]
+                        continue
+
+                    p("Child method differs from parrent:")
+                    p(f"  {parrent.name}.{method.name}(): (parrent)\n    ", end="")
                     p(
                         (
                             [x.type for x in parrent_method.params.values()],
                             parrent_method.return_type,
                         )
                     )
-                    p(f"{obj.name}.{method.name}():")
-                    p(([x.type for x in method.params.values()], method.return_type))
+                    p(f"  {obj.name}.{method.name}(): (child)\n    ", end="")
+                    p(
+                        (
+                            [x.type for x in method.params.values()],
+                            method.return_type,
+                        )
+                    )
                     try:
-                        input()
+                        input("(ignoring; enter to continue)")
                     except KeyboardInterrupt:
                         exit()
 
@@ -561,10 +617,7 @@ def cleanup():
 merge()
 cleanup()
 
-
 # A nyní konečně codegen...
-
-
 with open(OUTPUT_FILE, "w", encoding="utf8") as file:
     file.write(manual_header)
     file.write("\n")
