@@ -1,0 +1,4036 @@
+{
+    "UserAppManager": {
+        "className": "UserAppManager",
+        "ownProperties": [
+            "_parser",
+            "addGlobalApp",
+            "getClassName",
+            "getGlobalApp",
+            "getGlobalAppAt",
+            "getGlobalAppByPath",
+            "getGlobalAppCount",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "removeGlobalApp",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "UserAppManager",
+                "uuid": "{aa8321d4-f755-5aef-4eb6-45ac6c6ad9ef}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.userAppManager()"
+        ]
+    },
+    "UserDesktopAppConfig": {
+        "className": "UserDesktopAppConfig",
+        "ownProperties": [
+            "_parser",
+            "getAuthor",
+            "getAutoInstallDeviceAt",
+            "getAutoInstallDeviceCount",
+            "getClassName",
+            "getCommandAt",
+            "getCommandCount",
+            "getContact",
+            "getDescription",
+            "getFilesDir",
+            "getGuiName",
+            "getHtmlFile",
+            "getIconFile",
+            "getId",
+            "getLanguage",
+            "getName",
+            "getObjectUuid",
+            "getProjectDir",
+            "getVersion",
+            "hasAutoInstallDevice",
+            "isBackgroundGuiApp",
+            "isOnDesktop",
+            "registerObjectEvent",
+            "setOnDesktop",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "UserDesktopAppConfig",
+                "uuid": "{22440ad6-d933-dd0c-69b6-450f9cc05516}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "UserAppManager",
+                    "uuid": "{aa8321d4-f755-5aef-4eb6-45ac6c6ad9ef}"
+                }
+            },
+            "getGlobalAppAt(1)"
+        ]
+    },
+    "Directory": {
+        "className": "Directory",
+        "ownProperties": [
+            "_parser",
+            "addDirectory",
+            "addFile",
+            "addHttpPage",
+            "addTextFile",
+            "copyAllFilesFrom",
+            "fileExist",
+            "getAbsPath",
+            "getClassName",
+            "getContent",
+            "getFile",
+            "getFileAt",
+            "getFileCount",
+            "getName",
+            "getObjectUuid",
+            "getParent",
+            "getPermission",
+            "getSize",
+            "getSpaceUsed",
+            "isDirectory",
+            "isExecutable",
+            "isReadable",
+            "isWritable",
+            "registerObjectEvent",
+            "removeAllFiles",
+            "removeFile",
+            "renameFile",
+            "setTextContent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Directory",
+                "uuid": "{8c8fbb6e-521b-ff29-50b6-45fe800123fc}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "UserDesktopAppConfig",
+                    "uuid": "{e6ffb1e8-028e-c9b6-4fb6-45e9eacb720f}"
+                }
+            },
+            "getFilesDir()"
+        ]
+    },
+    "File": {
+        "className": "File",
+        "ownProperties": [
+            "_parser",
+            "getAbsPath",
+            "getClassName",
+            "getContent",
+            "getName",
+            "getObjectUuid",
+            "getParent",
+            "getPermission",
+            "getSize",
+            "isDirectory",
+            "isExecutable",
+            "isReadable",
+            "isWritable",
+            "registerObjectEvent",
+            "setTextContent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "File",
+                "uuid": "{b07d4f6c-2dda-0239-52b6-45aba0a5c459}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Directory",
+                    "uuid": "{8c8fbb6e-521b-ff29-50b6-45fe800123fc}"
+                }
+            },
+            "getFileAt(0)"
+        ]
+    },
+    "SystemFileManager": {
+        "className": "SystemFileManager",
+        "ownProperties": [
+            "_parser",
+            "convertFromNativeSeparators",
+            "convertToNativeSeparators",
+            "copySrcDirectoryToDestDirectory",
+            "copySrcFileToDestFile",
+            "directoryExists",
+            "fileExists",
+            "getAbsolutePath",
+            "getClassName",
+            "getFileBinaryContents",
+            "getFileCheckSum",
+            "getFileContents",
+            "getFileModificationTime",
+            "getFilePermissions",
+            "getFileSize",
+            "getFileWatcher",
+            "getFilesInDirectory",
+            "getObjectUuid",
+            "getOpenFileName",
+            "getOpenFileNames",
+            "getRelativePath",
+            "getSaveFileName",
+            "isAbsolutePath",
+            "isRelativePath",
+            "makeDirectory",
+            "moveSrcDirectoryToDestDirectory",
+            "moveSrcFileToDestFile",
+            "registerObjectEvent",
+            "removeDirectory",
+            "removeFile",
+            "setFilePermissions",
+            "unregisterObjectEvent",
+            "unzipFile",
+            "unzipFileTo",
+            "writeBinaryToFile",
+            "writePlainTextToFile",
+            "writeTextToFile",
+            "zipDirectory",
+            "zipDirectoryTo",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "SystemFileManager",
+                "uuid": "{8f7e145f-e836-f844-70ee-45707ebbad24}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.systemFileManager()"
+        ]
+    },
+    "SystemFileWatcher": {
+        "className": "SystemFileWatcher",
+        "ownProperties": [
+            "_parser",
+            "addPath",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "removePath",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "SystemFileWatcher",
+                "uuid": "{c32be7bb-6bcf-1dac-83ee-45bca1fc89b2}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "SystemFileManager",
+                    "uuid": "{8f7e145f-e836-f844-70ee-45707ebbad24}"
+                }
+            },
+            "getFileWatcher()"
+        ]
+    },
+    "Simulation": {
+        "className": "Simulation",
+        "ownProperties": [
+            "_parser",
+            "backward",
+            "createFrameInstance",
+            "createFrameInstanceCustomType",
+            "createTimer",
+            "createTimerUuid",
+            "finalizeFrameInstance",
+            "forward",
+            "getClassName",
+            "getCurrentFrameInstanceIndex",
+            "getCurrentSimTime",
+            "getFrameInstanceAt",
+            "getFrameInstanceCount",
+            "getIpcTimer",
+            "getObjectUuid",
+            "isSimulationMode",
+            "registerObjectEvent",
+            "resetSimulation",
+            "setSimulationMode",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Simulation",
+                "uuid": "{9e65c553-c5ea-10b2-39b9-45cc8a7d996b}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.simulation()"
+        ]
+    },
+    "Options": {
+        "className": "Options",
+        "ownProperties": [
+            "_parser",
+            "addBackgroundImage",
+            "addCustomHideOption",
+            "getBufferFullAction",
+            "getClassName",
+            "getConfigFilePath",
+            "getCurrentLanguage",
+            "getCustomHideOption",
+            "getObjectUuid",
+            "isAccessible",
+            "isAnimation",
+            "isAutoCablingDisabled",
+            "isBottomToolbarShown",
+            "isCableInfoPopup",
+            "isChallenge_PDUInfo",
+            "isCliTabHidden",
+            "isConfigTabHidden",
+            "isDesktopTabHidden",
+            "isDevTaskbarShown",
+            "isDeviceModelShown",
+            "isDockFirst",
+            "isEnableCableLengthEffects",
+            "isExternalNetworkAccessEnabled",
+            "isGuiTabHidden",
+            "isHideDevLabel",
+            "isHideDevModelLabel",
+            "isHideQoSStamp",
+            "isLinkLightsShown",
+            "isLoggingEnabled",
+            "isMainToolbarShown",
+            "isPhysicalTabHidden",
+            "isPortNotShownOnMouseOver",
+            "isPortShown",
+            "isSecondaryToolbarShown",
+            "isSound",
+            "isTelephonySound",
+            "isUseCliDefaultTab",
+            "isUsingMetric",
+            "registerObjectEvent",
+            "removeBackgroundImage",
+            "saveFile",
+            "setAccessible",
+            "setAnimation",
+            "setBottomToolbarShown",
+            "setBufferFullAction",
+            "setCableInfoPopup",
+            "setCliTabHidden",
+            "setConfigTabHidden",
+            "setCustomHideOption",
+            "setDesktopTabHidden",
+            "setDisableAutoCabling",
+            "setEnableCableLengthEffects",
+            "setEnableExternalNetworkAccess",
+            "setGuiTabHidden",
+            "setHideDevLabel",
+            "setHideDevModelLabel",
+            "setHideQoSStamp",
+            "setIsChallenge_PDUInfo",
+            "setIsDockFirst",
+            "setIsLinkLightShown",
+            "setIsLoggingEnabled",
+            "setIsPortShown",
+            "setMainToolbarShown",
+            "setPhysicalTabHidden",
+            "setPortNotShownOnMouseOver",
+            "setSecondaryToolbarShown",
+            "setShowDevTaskbar",
+            "setSound",
+            "setTelephonySound",
+            "setUseCliDefaultTab",
+            "setUseMetric",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Options",
+                "uuid": "{db1c02fa-a69a-2145-38b6-45102d4d8b42}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.options()"
+        ]
+    },
+    "Network": {
+        "className": "Network",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getDevice",
+            "getDeviceAt",
+            "getDeviceCount",
+            "getLinkAt",
+            "getLinkCount",
+            "getObjectUuid",
+            "getTotalDeviceAttributeValue",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Network",
+                "uuid": "{03b4d0c3-e2f0-8d0a-f7cc-455afacc4ba1}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.network()"
+        ]
+    },
+    "Cable": {
+        "className": "Cable",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getConnectionType",
+            "getObjectUuid",
+            "getOtherPort",
+            "getPort1",
+            "getPort2",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Cable",
+                "uuid": "{02352238-f95a-cc61-6ce4-45e6e5dbb905}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Port",
+                    "uuid": "{98dcbda1-93b9-f241-ebe2-45e60477b585}"
+                }
+            },
+            "getLink()"
+        ]
+    },
+    "RouterPort": {
+        "className": "RouterPort",
+        "ownProperties": [
+            "_parser",
+            "addEntryEigrpPassive",
+            "addIpv6Address",
+            "addOspfMd5Key",
+            "addSummaryAddress",
+            "deleteLink",
+            "getAclInID",
+            "getAclOutID",
+            "getBandwidth",
+            "getBandwidthInfo",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getDelay",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getIntOfAs",
+            "getIpAddress",
+            "getIpMtu",
+            "getIpsInID",
+            "getIpsOutID",
+            "getIpv6Address",
+            "getIpv6Addresses",
+            "getIpv6LinkLocal",
+            "getIpv6Mtu",
+            "getIpv6Multicast",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getMtu",
+            "getName",
+            "getNatMode",
+            "getObjectUuid",
+            "getOspfAuthKey",
+            "getOspfAuthType",
+            "getOspfCost",
+            "getOspfDeadInterval",
+            "getOspfHelloInterval",
+            "getOspfPriority",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getSubnetMask",
+            "getTerminalTypeShortString",
+            "getType",
+            "getUnicastIpv6Address",
+            "getUnicastIpv6Prefix",
+            "getZoneMemberName",
+            "hasIpv6Address",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isCdpEnable",
+            "isDhcpClientOn",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isIkeEnabled",
+            "isInIpv6Multicast",
+            "isInboundFirewallOn",
+            "isInboundIpv6FirewallOn",
+            "isIpv6AddressAutoConfig",
+            "isIpv6Enabled",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isProxyArpEnabled",
+            "isRipPassive",
+            "isRipSplitHorizon",
+            "isSetToDhcpv6",
+            "isStraightPins",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "removeAllIpv6Addresses",
+            "removeEntryEigrpPassive",
+            "removeIpv6Address",
+            "removeOspfMd5Key",
+            "removeSummaryAddress",
+            "resetBandwidth",
+            "resetDelay",
+            "setAclInID",
+            "setAclOutID",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setBandwidthInfo",
+            "setCdpEnable",
+            "setChannel",
+            "setClockRate",
+            "setDefaultArpTimeout",
+            "setDefaultGateway",
+            "setDelay",
+            "setDescription",
+            "setDhcpClientFlag",
+            "setDnsServerIp",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setIkeEnabled",
+            "setInboundFirewallService",
+            "setInboundIpv6FirewallService",
+            "setIntForAs",
+            "setIpMtu",
+            "setIpSubnetMask",
+            "setIpsInID",
+            "setIpsOutID",
+            "setIpv6AddressAutoConfig",
+            "setIpv6Enabled",
+            "setIpv6LinkLocal",
+            "setIpv6Mtu",
+            "setMacAddress",
+            "setMtu",
+            "setNatMode",
+            "setOspfAuthKey",
+            "setOspfCost",
+            "setOspfDeadInterval",
+            "setOspfHelloInterval",
+            "setOspfPriority",
+            "setPower",
+            "setProxyArpEnabled",
+            "setRipPassive",
+            "setRipSplitHorizon",
+            "setZoneMemberName",
+            "setv6DefaultGateway",
+            "setv6ServerIp",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "RouterPort",
+                "uuid": "{3c688286-2dac-6a67-cadc-45651a54e8a9}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getPortAt(0)"
+        ]
+    },
+    "FifoQueue": {
+        "className": "FifoQueue",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "getQueueAt",
+            "getQueueCount",
+            "getQueueType",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "FifoQueue",
+                "uuid": "{5c0bfbe2-8dda-a5c5-e4dc-45d9fb3e90f6}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "RouterPort",
+                    "uuid": "{dd78af1f-6c7d-ecff-d1dc-4500d72823b0}"
+                }
+            },
+            "getQosQueue()"
+        ]
+    },
+    "Queue": {
+        "className": "Queue",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getName",
+            "getObjectUuid",
+            "getPacketCnt",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Queue",
+                "uuid": "{4933ef05-0984-337d-e5dc-4570df6102b7}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "FifoQueue",
+                    "uuid": "{5c0bfbe2-8dda-a5c5-e4dc-45d9fb3e90f6}"
+                }
+            },
+            "getQueueAt(0)"
+        ]
+    },
+    "Router": {
+        "className": "Router",
+        "ownProperties": [
+            "_parser",
+            "activityTreeToXml",
+            "addBootSystem",
+            "addCustomVar",
+            "addDeviceExternalAttributes",
+            "addModule",
+            "addProgrammingSerialOutputs",
+            "addSound",
+            "addSubInt",
+            "addUserDesktopApp",
+            "addUserDesktopAppFrom",
+            "addUserDesktopAppFromGlobal",
+            "addUserPass",
+            "addUserPassEntry",
+            "changePortEncapsulation",
+            "clearDeviceExternalAttributes",
+            "clearFtpPasswd",
+            "clearFtpUsername",
+            "clearProgrammingSerialOutputs",
+            "destroySounds",
+            "enterCommand",
+            "getAreaLeftX",
+            "getAreaTopY",
+            "getBannerMotd",
+            "getBia",
+            "getBootSystems",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getClassMapManager",
+            "getClassName",
+            "getCommandLine",
+            "getConfigRegister",
+            "getConsole",
+            "getConsoleLine",
+            "getCustomInterface",
+            "getCustomLogicalImage",
+            "getCustomPhysicalImage",
+            "getCustomVarNameAt",
+            "getCustomVarStr",
+            "getCustomVarValueStrAt",
+            "getCustomVarsCount",
+            "getDescriptor",
+            "getDeviceExternalAttributeValue",
+            "getDeviceExternalAttributes",
+            "getEnablePassword",
+            "getEnableSecret",
+            "getFtpPasswd",
+            "getFtpUsername",
+            "getGlobalXPhysicalWS",
+            "getGlobalYPhysicalWS",
+            "getHostName",
+            "getIpcTerminalLine",
+            "getLine",
+            "getModel",
+            "getName",
+            "getNetflowExporterManager",
+            "getNetflowMonitorManager",
+            "getNetflowRecordManager",
+            "getNextConfigRegister",
+            "getObjectUuid",
+            "getParameterMapManager",
+            "getPhysicalObject",
+            "getPolicyMapManager",
+            "getPort",
+            "getPortAt",
+            "getPortCount",
+            "getPorts",
+            "getPower",
+            "getProcess",
+            "getProgrammingSerialOutputs",
+            "getRootModule",
+            "getSerialNumber",
+            "getServicePasswordEncryption",
+            "getStartupFile",
+            "getSupportedModule",
+            "getTimeZone",
+            "getType",
+            "getUpTime",
+            "getUsbPortAt",
+            "getUsbPortCount",
+            "getUserDesktopAppAt",
+            "getUserDesktopAppByDir",
+            "getUserDesktopAppById",
+            "getUserDesktopAppCount",
+            "getUserEntryAt",
+            "getUserPass",
+            "getUserPassCount",
+            "getVtyLine",
+            "getXCoordinate",
+            "getXPhysicalWS",
+            "getYCoordinate",
+            "getYPhysicalWS",
+            "hasCustomVar",
+            "isBooting",
+            "isDesktopAvailable",
+            "isOutdated",
+            "isProjectRunning",
+            "isUserExist",
+            "moveByInPhysicalWS",
+            "moveToLocInPhysicalWS",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "playSound",
+            "registerObjectEvent",
+            "relinkUserDesktopApp",
+            "removeAllBootSystem",
+            "removeBootSystem",
+            "removeCustomVar",
+            "removeModule",
+            "removeSubInt",
+            "removeUserDesktopApp",
+            "removeUserPass",
+            "removeUserPassAt",
+            "removeUserPassEntry",
+            "restoreToDefault",
+            "runCodeInProject",
+            "runProject",
+            "serializeToXml",
+            "setBannerMotd",
+            "setCustomInterface",
+            "setCustomLogicalImage",
+            "setCustomPhysicalImage",
+            "setDeviceExternalAttributes",
+            "setEnablePassword",
+            "setEnableSecret",
+            "setFtpPasswd",
+            "setFtpUsername",
+            "setHostName",
+            "setName",
+            "setNextConfigRegister",
+            "setPower",
+            "setServicePasswordEncryption",
+            "setStartupFile",
+            "setTime",
+            "setTimeZone",
+            "skipBoot",
+            "stopProject",
+            "stopSound",
+            "stopSounds",
+            "subtractDeviceExternalAttributes",
+            "unregisterObjectEvent",
+            "updateTemplateCreationTime",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Router",
+                "uuid": "{c380a851-37bf-b386-b4dd-45df52bce5af}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "RouterPort",
+                    "uuid": "{e4ebfc67-9627-bde3-39de-450bb2f486f1}"
+                }
+            },
+            "getOwnerDevice()"
+        ]
+    },
+    "Module": {
+        "className": "Module",
+        "ownProperties": [
+            "_parser",
+            "addModuleAt",
+            "addSlot",
+            "getClassName",
+            "getDescriptor",
+            "getModuleAt",
+            "getModuleCount",
+            "getModuleNameAsString",
+            "getModuleNumber",
+            "getModuleType",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortAt",
+            "getPortCount",
+            "getSlotCount",
+            "getSlotPath",
+            "getSlotTypeAt",
+            "registerObjectEvent",
+            "removeModuleAt",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Module",
+                "uuid": "{d7e763ec-9abd-127a-f0e2-4587777750bc}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Module",
+                    "uuid": "{e837f011-0347-740e-d8e2-45abffd58ed8}"
+                }
+            },
+            "getModuleAt(5)"
+        ]
+    },
+    "SwitchPort": {
+        "className": "SwitchPort",
+        "ownProperties": [
+            "_parser",
+            "addTrunkVlans",
+            "deleteLink",
+            "getAccessVlan",
+            "getAdminOpMode",
+            "getBandwidth",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getName",
+            "getNativeVlanId",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPortSecurity",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getTerminalTypeShortString",
+            "getType",
+            "getVoipVlanId",
+            "isAccessPort",
+            "isAdminModeSet",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isCdpEnable",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isNonegotiate",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isStraightPins",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "removeTrunkVlans",
+            "setAccessPort",
+            "setAccessVlan",
+            "setAdminOpMode",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setCdpEnable",
+            "setChannel",
+            "setClockRate",
+            "setDescription",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setMacAddress",
+            "setNativeVlanId",
+            "setNonegotiateFlag",
+            "setPower",
+            "setVoipVlanId",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "SwitchPort",
+                "uuid": "{eea0ce13-b8e5-d30b-c4de-45424ab7432a}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Module",
+                    "uuid": "{211f7391-834e-a5f0-b1de-458bf0c3eb8c}"
+                }
+            },
+            "getPortAt(9)"
+        ]
+    },
+    "StrictPriorityQueue": {
+        "className": "StrictPriorityQueue",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "getQueueAt",
+            "getQueueCount",
+            "getQueueType",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "StrictPriorityQueue",
+                "uuid": "{38396ee6-486f-84f9-30df-4529edea9380}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "SwitchPort",
+                    "uuid": "{eea0ce13-b8e5-d30b-c4de-45424ab7432a}"
+                }
+            },
+            "getQosQueue()"
+        ]
+    },
+    "CiscoDevice": {
+        "className": "CiscoDevice",
+        "ownProperties": [
+            "_parser",
+            "activityTreeToXml",
+            "addBootSystem",
+            "addCustomVar",
+            "addDeviceExternalAttributes",
+            "addModule",
+            "addProgrammingSerialOutputs",
+            "addSound",
+            "addUserDesktopApp",
+            "addUserDesktopAppFrom",
+            "addUserDesktopAppFromGlobal",
+            "addUserPassEntry",
+            "clearDeviceExternalAttributes",
+            "clearFtpPasswd",
+            "clearFtpUsername",
+            "clearProgrammingSerialOutputs",
+            "destroySounds",
+            "enterCommand",
+            "getAreaLeftX",
+            "getAreaTopY",
+            "getBannerMotd",
+            "getBia",
+            "getBootSystems",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getClassName",
+            "getCommandLine",
+            "getConfigRegister",
+            "getConsole",
+            "getConsoleLine",
+            "getCustomInterface",
+            "getCustomLogicalImage",
+            "getCustomPhysicalImage",
+            "getCustomVarNameAt",
+            "getCustomVarStr",
+            "getCustomVarValueStrAt",
+            "getCustomVarsCount",
+            "getDescriptor",
+            "getDeviceExternalAttributeValue",
+            "getDeviceExternalAttributes",
+            "getEnablePassword",
+            "getEnableSecret",
+            "getFtpPasswd",
+            "getFtpUsername",
+            "getGlobalXPhysicalWS",
+            "getGlobalYPhysicalWS",
+            "getHostName",
+            "getIpcTerminalLine",
+            "getLine",
+            "getModel",
+            "getName",
+            "getNextConfigRegister",
+            "getObjectUuid",
+            "getPhysicalObject",
+            "getPort",
+            "getPortAt",
+            "getPortCount",
+            "getPorts",
+            "getPower",
+            "getProcess",
+            "getProgrammingSerialOutputs",
+            "getRootModule",
+            "getSerialNumber",
+            "getServicePasswordEncryption",
+            "getStartupFile",
+            "getSupportedModule",
+            "getTimeZone",
+            "getType",
+            "getUpTime",
+            "getUsbPortAt",
+            "getUsbPortCount",
+            "getUserDesktopAppAt",
+            "getUserDesktopAppByDir",
+            "getUserDesktopAppById",
+            "getUserDesktopAppCount",
+            "getUserEntryAt",
+            "getUserPassCount",
+            "getVtyLine",
+            "getXCoordinate",
+            "getXPhysicalWS",
+            "getYCoordinate",
+            "getYPhysicalWS",
+            "hasCustomVar",
+            "isBooting",
+            "isDesktopAvailable",
+            "isOutdated",
+            "isProjectRunning",
+            "isUserExist",
+            "moveByInPhysicalWS",
+            "moveToLocInPhysicalWS",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "playSound",
+            "registerObjectEvent",
+            "relinkUserDesktopApp",
+            "removeAllBootSystem",
+            "removeBootSystem",
+            "removeCustomVar",
+            "removeModule",
+            "removeUserDesktopApp",
+            "removeUserPassAt",
+            "removeUserPassEntry",
+            "restoreToDefault",
+            "runCodeInProject",
+            "runProject",
+            "serializeToXml",
+            "setBannerMotd",
+            "setCustomInterface",
+            "setCustomLogicalImage",
+            "setCustomPhysicalImage",
+            "setDeviceExternalAttributes",
+            "setEnablePassword",
+            "setEnableSecret",
+            "setFtpPasswd",
+            "setFtpUsername",
+            "setHostName",
+            "setName",
+            "setNextConfigRegister",
+            "setPower",
+            "setServicePasswordEncryption",
+            "setStartupFile",
+            "setTime",
+            "setTimeZone",
+            "skipBoot",
+            "stopProject",
+            "stopSound",
+            "stopSounds",
+            "subtractDeviceExternalAttributes",
+            "unregisterObjectEvent",
+            "updateTemplateCreationTime",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "CiscoDevice",
+                "uuid": "{15f2028a-b69d-05aa-f2e2-45e5fb99b7ce}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "SwitchPort",
+                    "uuid": "{6f37c531-8d30-ba37-63e3-4541ef44f84a}"
+                }
+            },
+            "getOwnerDevice()"
+        ]
+    },
+    "CsmaCdProcess": {
+        "className": "CsmaCdProcess",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getKeepAliveInterval",
+            "getObjectUuid",
+            "getPacketCnt",
+            "getUserTrafficAt",
+            "isKeepAliveOn",
+            "registerObjectEvent",
+            "setKeepAliveInterval",
+            "setKeepAliveOn",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "CsmaCdProcess",
+                "uuid": "{07ef9568-212e-71eb-d8dc-45f623a4e4c4}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "RouterPort",
+                    "uuid": "{139f1bd1-bb21-94fc-cfdc-45814f69e92c}"
+                }
+            },
+            "getKeepAliveProcess()"
+        ]
+    },
+    "Process": {
+        "className": "Process",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Process",
+                "uuid": "{8489f973-ae04-8e24-d6dc-45aadcd60450}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "RouterPort",
+                    "uuid": "{139f1bd1-bb21-94fc-cfdc-45814f69e92c}"
+                }
+            },
+            "getEncapProcess()"
+        ]
+    },
+    "ModuleDescriptor": {
+        "className": "ModuleDescriptor",
+        "ownProperties": [
+            "_parser",
+            "addModuleAt",
+            "addModulePhysicalView",
+            "addSlot",
+            "create",
+            "getClassName",
+            "getGroup",
+            "getImagePath",
+            "getInfo",
+            "getModel",
+            "getModuleAt",
+            "getModuleCount",
+            "getModulePhysicalViewAt",
+            "getModulePhysicalViewCount",
+            "getObjectUuid",
+            "getSlotCount",
+            "getSlotTypeAt",
+            "getType",
+            "isHotSwappable",
+            "registerObjectEvent",
+            "removeModuleAt",
+            "setGroup",
+            "setHotSwappable",
+            "setImagePath",
+            "setInfo",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ModuleDescriptor",
+                "uuid": "{15236338-a572-8c66-c4b7-45c7eca81583}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Module",
+                    "uuid": "{0d50d294-238b-707a-b0de-45a8a355d0c6}"
+                }
+            },
+            "getDescriptor()"
+        ]
+    },
+    "ModulePhysicalView": {
+        "className": "ModulePhysicalView",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getModuleAdded",
+            "getObjectUuid",
+            "getSlotNum",
+            "getX1",
+            "getX2",
+            "getY1",
+            "getY2",
+            "isHorizontal",
+            "isNonRemovable",
+            "isPower",
+            "registerObjectEvent",
+            "setHorizontal",
+            "setIsNonRemovable",
+            "setIsPower",
+            "setModuleAdded",
+            "setSlotNum",
+            "setX1",
+            "setX2",
+            "setY1",
+            "setY2",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ModulePhysicalView",
+                "uuid": "{6beda85e-ab79-d521-c6b7-451eadd90a27}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "ModuleDescriptor",
+                    "uuid": "{15236338-a572-8c66-c4b7-45c7eca81583}"
+                }
+            },
+            "getModulePhysicalViewAt(0)"
+        ]
+    },
+    "PolicyMapManager": {
+        "className": "PolicyMapManager",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "getPolicyMap",
+            "getPolicyMapAt",
+            "getPolicyMapCount",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PolicyMapManager",
+                "uuid": "{3b98932c-0904-ca5e-b0dc-45adaccf2028}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getPolicyMapManager()"
+        ]
+    },
+    "PolicyMap": {
+        "className": "PolicyMap",
+        "ownProperties": [
+            "_parser",
+            "getClassAt",
+            "getClassCnt",
+            "getClassName",
+            "getMapName",
+            "getMapType",
+            "getObjectUuid",
+            "getTotalBandwidth",
+            "getTotalBandwidthPercent",
+            "getTotalBandwidthRemainPercent",
+            "hasGtsFeature",
+            "hasOutputFeature",
+            "isBandwidthConfigured",
+            "isFairQueueConfigured",
+            "isPriorityConfigured",
+            "isShapeConfigured",
+            "registerObjectEvent",
+            "setMapType",
+            "toString",
+            "unregisterObjectEvent",
+            "updateOutputPort",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PolicyMap",
+                "uuid": "{15544c39-3532-dbe4-b1dc-453694f62c9e}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "PolicyMapManager",
+                    "uuid": "{3b98932c-0904-ca5e-b0dc-45adaccf2028}"
+                }
+            },
+            "getPolicyMapAt(0)"
+        ]
+    },
+    "PhysicalObject": {
+        "className": "PhysicalObject",
+        "ownProperties": [
+            "_parser",
+            "getBackground",
+            "getCenterX",
+            "getCenterY",
+            "getChild",
+            "getChildAt",
+            "getChildByPath",
+            "getChildCount",
+            "getClassName",
+            "getDevice",
+            "getEnvironment",
+            "getGlobalX",
+            "getGlobalY",
+            "getHeight",
+            "getName",
+            "getObjectUuid",
+            "getParent",
+            "getPathUuid",
+            "getType",
+            "getWidth",
+            "getX",
+            "getXScale",
+            "getY",
+            "getYScale",
+            "moveBy",
+            "moveIntoObject",
+            "moveOutOfCurrentObject",
+            "moveTo",
+            "nameToUuidPath",
+            "registerObjectEvent",
+            "setBackground",
+            "setVelocity",
+            "setX",
+            "setXVelocity",
+            "setY",
+            "setYVelocity",
+            "unregisterObjectEvent",
+            "uuidToNamePath",
+            "xVelocity",
+            "yVelocity",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PhysicalObject",
+                "uuid": "{3510ccf6-ea3b-f41c-8dd6-45709d41e281}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "CiscoDevice",
+                    "uuid": "{15f2028a-b69d-05aa-f2e2-45e5fb99b7ce}"
+                }
+            },
+            "getPhysicalObject()"
+        ]
+    },
+    "Pc": {
+        "className": "Pc",
+        "ownProperties": [
+            "_parser",
+            "activityTreeToXml",
+            "addCustomVar",
+            "addDeviceExternalAttributes",
+            "addModule",
+            "addProgrammingSerialOutputs",
+            "addSound",
+            "addUserDesktopApp",
+            "addUserDesktopAppFrom",
+            "addUserDesktopAppFromGlobal",
+            "clearDeviceExternalAttributes",
+            "clearProgrammingSerialOutputs",
+            "destroySounds",
+            "getAreaLeftX",
+            "getAreaTopY",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getClassName",
+            "getCommandLine",
+            "getCommandPrompt",
+            "getCustomInterface",
+            "getCustomLogicalImage",
+            "getCustomPhysicalImage",
+            "getCustomVarNameAt",
+            "getCustomVarStr",
+            "getCustomVarValueStrAt",
+            "getCustomVarsCount",
+            "getDescriptor",
+            "getDeviceExternalAttributeValue",
+            "getDeviceExternalAttributes",
+            "getDhcpFlag",
+            "getGlobalXPhysicalWS",
+            "getGlobalYPhysicalWS",
+            "getModel",
+            "getName",
+            "getObjectUuid",
+            "getPhysicalObject",
+            "getPort",
+            "getPortAt",
+            "getPortCount",
+            "getPorts",
+            "getPower",
+            "getProcess",
+            "getProgrammingSerialOutputs",
+            "getRootModule",
+            "getRs232Port",
+            "getSerialNumber",
+            "getSupportedModule",
+            "getType",
+            "getUpTime",
+            "getUsbPortAt",
+            "getUsbPortCount",
+            "getUserDesktopAppAt",
+            "getUserDesktopAppByDir",
+            "getUserDesktopAppById",
+            "getUserDesktopAppCount",
+            "getXCoordinate",
+            "getXPhysicalWS",
+            "getYCoordinate",
+            "getYPhysicalWS",
+            "hasCustomVar",
+            "isDesktopAvailable",
+            "isOutdated",
+            "isProjectRunning",
+            "moveByInPhysicalWS",
+            "moveToLocInPhysicalWS",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "playSound",
+            "registerObjectEvent",
+            "relinkUserDesktopApp",
+            "removeCustomVar",
+            "removeModule",
+            "removeUserDesktopApp",
+            "restoreToDefault",
+            "runCodeInProject",
+            "runProject",
+            "serializeToXml",
+            "setCustomInterface",
+            "setCustomLogicalImage",
+            "setCustomPhysicalImage",
+            "setDefaultGateway",
+            "setDeviceExternalAttributes",
+            "setDhcpFlag",
+            "setName",
+            "setPower",
+            "setTime",
+            "stopProject",
+            "stopSound",
+            "stopSounds",
+            "subtractDeviceExternalAttributes",
+            "unregisterObjectEvent",
+            "updateTemplateCreationTime",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Pc",
+                "uuid": "{2d4cfae9-18b6-a730-c4df-45f26d2b8596}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "PhysicalObject",
+                    "uuid": "{c2f743d6-64d6-a1bb-a9d7-4592584fc745}"
+                }
+            },
+            "getDevice()"
+        ]
+    },
+    "UsbPort": {
+        "className": "UsbPort",
+        "ownProperties": [
+            "_parser",
+            "deleteLink",
+            "getBandwidth",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getController",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getTerminalTypeShortString",
+            "getType",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isStraightPins",
+            "isUsbHost",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setChannel",
+            "setClockRate",
+            "setDescription",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setMacAddress",
+            "setPower",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "UsbPort",
+                "uuid": "{0cb02ff5-3052-5117-29e0-45bd98d962e8}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Pc",
+                    "uuid": "{2d4cfae9-18b6-a730-c4df-45f26d2b8596}"
+                }
+            },
+            "getUsbPortAt(1)"
+        ]
+    },
+    "ConsolePort": {
+        "className": "ConsolePort",
+        "ownProperties": [
+            "_parser",
+            "deleteLink",
+            "getBandwidth",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getTerminalLine",
+            "getTerminalTypeShortString",
+            "getType",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isStraightPins",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setChannel",
+            "setClockRate",
+            "setDescription",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setMacAddress",
+            "setPower",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ConsolePort",
+                "uuid": "{7288458a-4358-e19f-54dc-45da24493a7f}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getConsole()"
+        ]
+    },
+    "ConsoleLine": {
+        "className": "ConsoleLine",
+        "ownProperties": [
+            "_parser",
+            "enterChar",
+            "enterCommand",
+            "flush",
+            "getClassName",
+            "getCommandInput",
+            "getConfigHistory",
+            "getCurrentHistory",
+            "getDataBits",
+            "getFlowControl",
+            "getHistorySize",
+            "getMode",
+            "getName",
+            "getObjectUuid",
+            "getOutput",
+            "getParity",
+            "getPrompt",
+            "getSpeed",
+            "getStopBits",
+            "getTelnetClientAt",
+            "getTelnetClientCount",
+            "getUserHistory",
+            "println",
+            "registerObjectEvent",
+            "setSettings",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ConsoleLine",
+                "uuid": "{0c25888e-1bd0-981e-68de-451f44775832}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "CiscoDevice",
+                    "uuid": "{4273079d-6c5b-b752-67de-455329591781}"
+                }
+            },
+            "getConsoleLine()"
+        ]
+    },
+    "UsbController": {
+        "className": "UsbController",
+        "ownProperties": [
+            "_parser",
+            "available",
+            "begin",
+            "deployProjectFromFileSystem",
+            "end",
+            "getClassName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "isPortUp",
+            "isProtocolUp",
+            "isSerialMonitoring",
+            "peek",
+            "peekChar",
+            "print",
+            "read",
+            "readChar",
+            "readLine",
+            "registerObjectEvent",
+            "setSerialMonitoring",
+            "unregisterObjectEvent",
+            "write",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "UsbController",
+                "uuid": "{3a7ba241-fd61-c049-2ae0-45ba50ad8ca4}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "UsbPort",
+                    "uuid": "{0cb02ff5-3052-5117-29e0-45bd98d962e8}"
+                }
+            },
+            "getHardwareQueue()"
+        ]
+    },
+    "HostPort": {
+        "className": "HostPort",
+        "ownProperties": [
+            "_parser",
+            "addIpv6Address",
+            "deleteLink",
+            "getBandwidth",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getIpAddress",
+            "getIpMtu",
+            "getIpv6Address",
+            "getIpv6Addresses",
+            "getIpv6LinkLocal",
+            "getIpv6Mtu",
+            "getIpv6Multicast",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getMtu",
+            "getName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getSubnetMask",
+            "getTerminalTypeShortString",
+            "getType",
+            "getUnicastIpv6Address",
+            "getUnicastIpv6Prefix",
+            "hasIpv6Address",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isDhcpClientOn",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isInIpv6Multicast",
+            "isInboundFirewallOn",
+            "isInboundIpv6FirewallOn",
+            "isIpv6AddressAutoConfig",
+            "isIpv6Enabled",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isSetToDhcpv6",
+            "isStraightPins",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "removeAllIpv6Addresses",
+            "removeIpv6Address",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setChannel",
+            "setClockRate",
+            "setDefaultArpTimeout",
+            "setDefaultGateway",
+            "setDescription",
+            "setDhcpClientFlag",
+            "setDnsServerIp",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setInboundFirewallService",
+            "setInboundIpv6FirewallService",
+            "setIpMtu",
+            "setIpSubnetMask",
+            "setIpv6AddressAutoConfig",
+            "setIpv6Enabled",
+            "setIpv6LinkLocal",
+            "setIpv6Mtu",
+            "setMacAddress",
+            "setMtu",
+            "setPower",
+            "setv6DefaultGateway",
+            "setv6ServerIp",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "HostPort",
+                "uuid": "{2ebd8704-6698-31e1-7fe1-450d43ad31c0}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Module",
+                    "uuid": "{cfddde30-adf9-1a56-7ee1-452141136051}"
+                }
+            },
+            "getPortAt(0)"
+        ]
+    },
+    "BluetoothManager": {
+        "className": "BluetoothManager",
+        "ownProperties": [
+            "_parser",
+            "acceptPairRequest",
+            "broadcastBeacon",
+            "createCustomProcess",
+            "deleteCustomProcess",
+            "discover",
+            "enableBroadcast",
+            "getBeaconData",
+            "getBeaconFrequency",
+            "getBeaconUuid",
+            "getClassName",
+            "getDevice",
+            "getDeviceAt",
+            "getDeviceByName",
+            "getDeviceCount",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "isBeaconBroadcasting",
+            "isBroadcastEnabled",
+            "isDiscoverable",
+            "pair",
+            "registerObjectEvent",
+            "setBeaconBroadcasting",
+            "setBeaconData",
+            "setBeaconFrequency",
+            "setBeaconUuid",
+            "setDiscoverable",
+            "unpair",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "BluetoothManager",
+                "uuid": "{b4d8c6e3-f1d0-b5ae-3ae0-458ea44c1255}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "HostPort",
+                    "uuid": "{a0cc32de-75c2-41e2-38e0-451399428159}"
+                }
+            },
+            "getEncapProcess()"
+        ]
+    },
+    "DeviceDescriptor": {
+        "className": "DeviceDescriptor",
+        "ownProperties": [
+            "_parser",
+            "addRequiredScriptModule",
+            "addSpecifiedModel",
+            "addSupportedModuleType",
+            "getClassName",
+            "getModel",
+            "getObjectUuid",
+            "getRequiredScriptModuleAt",
+            "getRequiredScriptModuleCount",
+            "getRootModule",
+            "getSpecifiedModelAt",
+            "getSpecifiedModelCount",
+            "getSupportedModuleTypeAt",
+            "getSupportedModuleTypeCount",
+            "getType",
+            "isExistSpecifiedModel",
+            "isModelSupported",
+            "isModuleTypeSupported",
+            "registerObjectEvent",
+            "removeRequiredScriptModule",
+            "removeSpecifiedModel",
+            "removeSupportedModuleType",
+            "setModelSupportedFlag",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "DeviceDescriptor",
+                "uuid": "{cb26a3fc-3daf-080b-c2b7-45347fa130b1}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "CiscoDevice",
+                    "uuid": "{4273079d-6c5b-b752-67de-455329591781}"
+                }
+            },
+            "getDescriptor()"
+        ]
+    },
+    "Device": {
+        "className": "Device",
+        "ownProperties": [
+            "_parser",
+            "activityTreeToXml",
+            "addCustomVar",
+            "addDeviceExternalAttributes",
+            "addModule",
+            "addProgrammingSerialOutputs",
+            "addSound",
+            "addUserDesktopApp",
+            "addUserDesktopAppFrom",
+            "addUserDesktopAppFromGlobal",
+            "clearDeviceExternalAttributes",
+            "clearProgrammingSerialOutputs",
+            "destroySounds",
+            "getAreaLeftX",
+            "getAreaTopY",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getClassName",
+            "getCommandLine",
+            "getCustomInterface",
+            "getCustomLogicalImage",
+            "getCustomPhysicalImage",
+            "getCustomVarNameAt",
+            "getCustomVarStr",
+            "getCustomVarValueStrAt",
+            "getCustomVarsCount",
+            "getDescriptor",
+            "getDeviceExternalAttributeValue",
+            "getDeviceExternalAttributes",
+            "getGlobalXPhysicalWS",
+            "getGlobalYPhysicalWS",
+            "getModel",
+            "getName",
+            "getObjectUuid",
+            "getPhysicalObject",
+            "getPort",
+            "getPortAt",
+            "getPortCount",
+            "getPorts",
+            "getPower",
+            "getProcess",
+            "getProgrammingSerialOutputs",
+            "getRootModule",
+            "getSerialNumber",
+            "getSupportedModule",
+            "getType",
+            "getUpTime",
+            "getUsbPortAt",
+            "getUsbPortCount",
+            "getUserDesktopAppAt",
+            "getUserDesktopAppByDir",
+            "getUserDesktopAppById",
+            "getUserDesktopAppCount",
+            "getXCoordinate",
+            "getXPhysicalWS",
+            "getYCoordinate",
+            "getYPhysicalWS",
+            "hasCustomVar",
+            "isDesktopAvailable",
+            "isOutdated",
+            "isProjectRunning",
+            "moveByInPhysicalWS",
+            "moveToLocInPhysicalWS",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "playSound",
+            "registerObjectEvent",
+            "relinkUserDesktopApp",
+            "removeCustomVar",
+            "removeModule",
+            "removeUserDesktopApp",
+            "restoreToDefault",
+            "runCodeInProject",
+            "runProject",
+            "serializeToXml",
+            "setCustomInterface",
+            "setCustomLogicalImage",
+            "setCustomPhysicalImage",
+            "setDeviceExternalAttributes",
+            "setName",
+            "setPower",
+            "setTime",
+            "stopProject",
+            "stopSound",
+            "stopSounds",
+            "subtractDeviceExternalAttributes",
+            "unregisterObjectEvent",
+            "updateTemplateCreationTime",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Device",
+                "uuid": "{9789be86-ec52-3540-d5e2-45171795a4f0}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "PhysicalObject",
+                    "uuid": "{d825a2c0-5d1b-806a-8cd6-4580174f7bfe}"
+                }
+            },
+            "getDevice()"
+        ]
+    },
+    "Server": {
+        "className": "Server",
+        "ownProperties": [
+            "_parser",
+            "activityTreeToXml",
+            "addCustomVar",
+            "addDeviceExternalAttributes",
+            "addModule",
+            "addProgrammingSerialOutputs",
+            "addSound",
+            "addUserDesktopApp",
+            "addUserDesktopAppFrom",
+            "addUserDesktopAppFromGlobal",
+            "clearDeviceExternalAttributes",
+            "clearProgrammingSerialOutputs",
+            "destroySounds",
+            "getAreaLeftX",
+            "getAreaTopY",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getClassName",
+            "getCommandLine",
+            "getCommandPrompt",
+            "getCustomInterface",
+            "getCustomLogicalImage",
+            "getCustomPhysicalImage",
+            "getCustomVarNameAt",
+            "getCustomVarStr",
+            "getCustomVarValueStrAt",
+            "getCustomVarsCount",
+            "getDescriptor",
+            "getDeviceExternalAttributeValue",
+            "getDeviceExternalAttributes",
+            "getDhcpFlag",
+            "getGlobalXPhysicalWS",
+            "getGlobalYPhysicalWS",
+            "getModel",
+            "getName",
+            "getObjectUuid",
+            "getPhysicalObject",
+            "getPort",
+            "getPortAt",
+            "getPortCount",
+            "getPorts",
+            "getPower",
+            "getProcess",
+            "getProgrammingSerialOutputs",
+            "getRootModule",
+            "getRs232Port",
+            "getSerialNumber",
+            "getSupportedModule",
+            "getType",
+            "getUpTime",
+            "getUsbPortAt",
+            "getUsbPortCount",
+            "getUserDesktopAppAt",
+            "getUserDesktopAppByDir",
+            "getUserDesktopAppById",
+            "getUserDesktopAppCount",
+            "getXCoordinate",
+            "getXPhysicalWS",
+            "getYCoordinate",
+            "getYPhysicalWS",
+            "hasCustomVar",
+            "isDesktopAvailable",
+            "isOutdated",
+            "isProjectRunning",
+            "moveByInPhysicalWS",
+            "moveToLocInPhysicalWS",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "playSound",
+            "registerObjectEvent",
+            "relinkUserDesktopApp",
+            "removeCustomVar",
+            "removeModule",
+            "removeUserDesktopApp",
+            "restoreToDefault",
+            "runCodeInProject",
+            "runProject",
+            "serializeToXml",
+            "setCustomInterface",
+            "setCustomLogicalImage",
+            "setCustomPhysicalImage",
+            "setDefaultGateway",
+            "setDeviceExternalAttributes",
+            "setDhcpFlag",
+            "setName",
+            "setPower",
+            "setTime",
+            "stopProject",
+            "stopSound",
+            "stopSounds",
+            "subtractDeviceExternalAttributes",
+            "unregisterObjectEvent",
+            "updateTemplateCreationTime",
+            "validateIoeUser",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Server",
+                "uuid": "{e2a47a6b-49ae-122b-63e0-456cde0c55ad}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "PhysicalObject",
+                    "uuid": "{ea91b959-3845-10a8-8bd6-450b9c740534}"
+                }
+            },
+            "getDevice()"
+        ]
+    },
+    "Port": {
+        "className": "Port",
+        "ownProperties": [
+            "_parser",
+            "deleteLink",
+            "getBandwidth",
+            "getBia",
+            "getChannel",
+            "getClassName",
+            "getClockRate",
+            "getDescription",
+            "getEncapProcess",
+            "getHardwareQueue",
+            "getHigherProcessCount",
+            "getKeepAliveProcess",
+            "getLightStatus",
+            "getLink",
+            "getMacAddress",
+            "getName",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getPortNameNumber",
+            "getPower",
+            "getQosQueue",
+            "getRemotePortName",
+            "getTerminalTypeShortString",
+            "getType",
+            "isAutoCross",
+            "isBandwidthAutoNegotiate",
+            "isDuplexAutoNegotiate",
+            "isEthernetPort",
+            "isFullDuplex",
+            "isPortUp",
+            "isPowerOn",
+            "isProtocolUp",
+            "isStraightPins",
+            "isWirelessPort",
+            "registerObjectEvent",
+            "setBandwidth",
+            "setBandwidthAutoNegotiate",
+            "setChannel",
+            "setClockRate",
+            "setDescription",
+            "setDuplexAutoNegotiate",
+            "setFullDuplex",
+            "setMacAddress",
+            "setPower",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Port",
+                "uuid": "{0b3631eb-920c-4ae9-f1e2-459115025e4a}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Module",
+                    "uuid": "{d7e763ec-9abd-127a-f0e2-4587777750bc}"
+                }
+            },
+            "getPortAt(0)"
+        ]
+    },
+    "TerminalLine": {
+        "className": "TerminalLine",
+        "ownProperties": [
+            "_parser",
+            "enterChar",
+            "enterCommand",
+            "flush",
+            "getClassName",
+            "getCommandInput",
+            "getConfigHistory",
+            "getCurrentHistory",
+            "getDataBits",
+            "getFlowControl",
+            "getHistorySize",
+            "getMode",
+            "getName",
+            "getObjectUuid",
+            "getParity",
+            "getPrompt",
+            "getSpeed",
+            "getStopBits",
+            "getTelnetClientAt",
+            "getTelnetClientCount",
+            "getUserHistory",
+            "println",
+            "registerObjectEvent",
+            "setSettings",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "TerminalLine",
+                "uuid": "{42de77e1-b7e1-79fa-52dc-4596cd84069d}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getIpcTerminalLine()"
+        ]
+    },
+    "ParameterMapManager": {
+        "className": "ParameterMapManager",
+        "ownProperties": [
+            "_parser",
+            "deleteParameterMap",
+            "getClassName",
+            "getObjectUuid",
+            "getParameterMap",
+            "getParameterMapAt",
+            "getParameterMapCount",
+            "isParameterMapExists",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ParameterMapManager",
+                "uuid": "{1bc51d35-39a1-6932-b2dc-45bace7b70f5}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getParameterMapManager()"
+        ]
+    },
+    "FlowRecordManager": {
+        "className": "FlowRecordManager",
+        "ownProperties": [
+            "_parser",
+            "createRecord",
+            "getClassName",
+            "getObjectUuid",
+            "getRecord",
+            "getRecordAt",
+            "getRecordCount",
+            "registerObjectEvent",
+            "removeRecord",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "FlowRecordManager",
+                "uuid": "{3bec9f06-c74f-4e2d-b5dc-45c424520996}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getNetflowRecordManager()"
+        ]
+    },
+    "FlowMonitorManager": {
+        "className": "FlowMonitorManager",
+        "ownProperties": [
+            "_parser",
+            "createMonitor",
+            "getClassName",
+            "getMonitor",
+            "getMonitorAt",
+            "getMonitorCount",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "removeMonitor",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "FlowMonitorManager",
+                "uuid": "{2a4ce070-8d65-803d-b6dc-4517132592d7}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getNetflowMonitorManager()"
+        ]
+    },
+    "FlowMonitor": {
+        "className": "FlowMonitor",
+        "ownProperties": [
+            "_parser",
+            "getActiveFlowCount",
+            "getActiveTimeoutCount",
+            "getCacheDatabase",
+            "getClassName",
+            "getCurrentEntryCount",
+            "getExporterAt",
+            "getExporterCount",
+            "getFlowsAddedCount",
+            "getFlowsAgedCount",
+            "getHighWaterMark",
+            "getInactiveTimeoutCount",
+            "getInterfaceInput",
+            "getInterfaceOutput",
+            "getMonitorDataAt",
+            "getMonitorDataCount",
+            "getMonitorName",
+            "getObjectUuid",
+            "getRecord",
+            "getTotalFlowAdded",
+            "monitorInUse",
+            "registerObjectEvent",
+            "toString",
+            "unregisterObjectEvent",
+            "unsetRecord",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "FlowMonitor",
+                "uuid": "{7a0c0c50-e0ca-15eb-b7dc-45fb56a4e5c8}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "FlowMonitorManager",
+                    "uuid": "{2a4ce070-8d65-803d-b6dc-4517132592d7}"
+                }
+            },
+            "getMonitorAt(0)"
+        ]
+    },
+    "CacheFlowDatabase": {
+        "className": "CacheFlowDatabase",
+        "ownProperties": [
+            "_parser",
+            "getAgerPolls",
+            "getClassName",
+            "getDistributionTable",
+            "getFlowSummaryTable",
+            "getObjectUuid",
+            "getTotalFlowCount",
+            "incrementFlow",
+            "registerObjectEvent",
+            "reset",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "CacheFlowDatabase",
+                "uuid": "{c4e463bb-9802-1bc4-b8dc-457338fc6c6f}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "FlowMonitor",
+                    "uuid": "{7a0c0c50-e0ca-15eb-b7dc-45fb56a4e5c8}"
+                }
+            },
+            "getCacheDatabase()"
+        ]
+    },
+    "NFExporterManager": {
+        "className": "NFExporterManager",
+        "ownProperties": [
+            "_parser",
+            "createNFExporter",
+            "getClassName",
+            "getNFExporterAt",
+            "getNFExporterByIpAndPort",
+            "getNFExporterByName",
+            "getNFExporterCount",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "removeNFExporter",
+            "removeNFExporterAt",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "NFExporterManager",
+                "uuid": "{b74a6565-bed8-5309-b9dc-45eff906533f}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getNetflowExporterManager()"
+        ]
+    },
+    "NFExporter": {
+        "className": "NFExporter",
+        "ownProperties": [
+            "_parser",
+            "addMonitor",
+            "createFrameInstance",
+            "getClassName",
+            "getDestinationAddr",
+            "getDestinationUdpPort",
+            "getDeviceUpTime",
+            "getExporterName",
+            "getExporterVersion",
+            "getObjectUuid",
+            "getOwnerDevice",
+            "getSrcPort",
+            "getTemplateById",
+            "getTemplateByRecordName",
+            "isFullyConfigured",
+            "registerObjectEvent",
+            "removeMontior",
+            "removeTemplate",
+            "setDestinationAddr",
+            "setDestinationUdpPort",
+            "setExporterName",
+            "setExporterVersion",
+            "setSrcPort",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "NFExporter",
+                "uuid": "{c73ce316-295c-a1d6-bbdc-45f33c879d2e}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "NFExporterManager",
+                    "uuid": "{b74a6565-bed8-5309-b9dc-45eff906533f}"
+                }
+            },
+            "getNFExporterAt(1)"
+        ]
+    },
+    "ClassMapManager": {
+        "className": "ClassMapManager",
+        "ownProperties": [
+            "_parser",
+            "classMapExist",
+            "deleteClassMap",
+            "getClassMap",
+            "getClassMapAt",
+            "getClassMapCount",
+            "getClassName",
+            "getObjectUuid",
+            "hasCircularReference",
+            "rearrangeMaps",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ClassMapManager",
+                "uuid": "{4a7df2a6-f818-0607-aedc-45d4fbd5ba09}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Router",
+                    "uuid": "{91ea57ed-0fd6-f069-4bdc-453dfa9217d6}"
+                }
+            },
+            "getClassMapManager()"
+        ]
+    },
+    "ClassMap": {
+        "className": "ClassMap",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getDescription",
+            "getMapName",
+            "getMapType",
+            "getMatchType",
+            "getMatchTypeString",
+            "getObjectUuid",
+            "getStatementCnt",
+            "isClassDefault",
+            "registerObjectEvent",
+            "setDescription",
+            "setMapType",
+            "setMatchType",
+            "toReverseString",
+            "toString",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ClassMap",
+                "uuid": "{1f0473fc-a61c-17f7-afdc-456d1c084310}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "ClassMapManager",
+                    "uuid": "{4a7df2a6-f818-0607-aedc-45d4fbd5ba09}"
+                }
+            },
+            "getClassMapAt(0)"
+        ]
+    },
+    "HardwareFactory": {
+        "className": "HardwareFactory",
+        "ownProperties": [
+            "_parser",
+            "devices",
+            "getClassName",
+            "getObjectUuid",
+            "modules",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "HardwareFactory",
+                "uuid": "{26a2c57c-3833-fe54-a737-466f7f3dc7fd}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.hardwareFactory()"
+        ]
+    },
+    "CommandLog": {
+        "className": "CommandLog",
+        "ownProperties": [
+            "_parser",
+            "clear",
+            "getClassName",
+            "getEntryAt",
+            "getEntryCount",
+            "getObjectUuid",
+            "isEnabled",
+            "registerObjectEvent",
+            "setEnabled",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "CommandLog",
+                "uuid": "{0c4b2875-3da6-8788-3ab6-45b358bca6c6}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.commandLog()"
+        ]
+    },
+    "IpcManager": {
+        "className": "IpcManager",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getListeningPort",
+            "getObjectUuid",
+            "getOpenData",
+            "launchCep",
+            "putSaveData",
+            "registerObjectEvent",
+            "registerOpenFileType",
+            "sendMessageTo",
+            "sendMessageToAll",
+            "sendMessageToInstance",
+            "sendMessageToRemote",
+            "sendMessageToRemoteInstance",
+            "setExclusive",
+            "thisInstance",
+            "unregisterObjectEvent",
+            "unregisterOpenFileType",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "IpcManager",
+                "uuid": "{23f72271-5619-9e7f-3cb6-4590fb34d670}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.ipcManager()"
+        ]
+    },
+    "AppWindow": {
+        "className": "AppWindow",
+        "ownProperties": [
+            "_parser",
+            "deletePTConf",
+            "exit",
+            "exitNoConfirm",
+            "fileActivityWizard",
+            "fileNew",
+            "fileOpen",
+            "fileOpenFromBytes",
+            "fileOpenFromURL",
+            "fileSave",
+            "fileSaveAs",
+            "fileSaveAsAsync",
+            "fileSaveAsNoPrompt",
+            "fileSaveAsPkz",
+            "fileSaveAsPkzAsync",
+            "fileSaveAsync",
+            "fileSaveToBytes",
+            "fileSaveToBytesAsync",
+            "getActiveDialog",
+            "getActiveFile",
+            "getActiveWorkspace",
+            "getActivityWizard",
+            "getAdminDialog",
+            "getBasePath",
+            "getClassName",
+            "getClipboardText",
+            "getCommonToolbar",
+            "getDefaultFileSaveLocation",
+            "getDialogManager",
+            "getEnvironmentDialog",
+            "getHeight",
+            "getInfoDialog",
+            "getInstructionDlg",
+            "getListOfFilesSaved",
+            "getListOfFilesToOpen",
+            "getLogicalToolbar",
+            "getMaximumHeight",
+            "getMaximumWidth",
+            "getMenuBar",
+            "getMinimumHeight",
+            "getMinimumWidth",
+            "getNetAcadUserUUID",
+            "getNetworkComponentBox",
+            "getObjectUuid",
+            "getPDUListWindow",
+            "getPLSwitch",
+            "getPTSAMode",
+            "getPaletteDialog",
+            "getPhysicalLocationDialog",
+            "getPhysicalToolbar",
+            "getPrintDialog",
+            "getProcessId",
+            "getRSSwitch",
+            "getRealtimeToolbar",
+            "getSecondaryToolBar",
+            "getSessionId",
+            "getSimulationPanel",
+            "getSimulationToolbar",
+            "getTempFileLocation",
+            "getToolBar",
+            "getUserCreatedPDU",
+            "getUserFolder",
+            "getVersion",
+            "getWebViewManager",
+            "getWidth",
+            "getX",
+            "getY",
+            "helpPath",
+            "isActivityWizardOpen",
+            "isInterfaceLocked",
+            "isLogicalMode",
+            "isPTSA",
+            "isPhysicalMode",
+            "isPreventClose",
+            "isRealtimeMode",
+            "isSimulationMode",
+            "listDirectory",
+            "openURL",
+            "raise",
+            "registerObjectEvent",
+            "setCheckOutdatedDevices",
+            "setClipboardText",
+            "setDisabled",
+            "setMaximumHeight",
+            "setMaximumSize",
+            "setMaximumWidth",
+            "setMinimumHeight",
+            "setMinimumSize",
+            "setMinimumWidth",
+            "setPLFrameVisible",
+            "setPTSAMode",
+            "setPTSAPluginVisible",
+            "setPreventClose",
+            "setRSFrameVisible",
+            "setVisible",
+            "setWindowGeometry",
+            "showMaximized",
+            "showMinimized",
+            "showNormal",
+            "suppressInstructionDlg",
+            "unregisterObjectEvent",
+            "writeToPT",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "AppWindow",
+                "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+            }
+        },
+        "via": [
+            null,
+            "ipc.appWindow()"
+        ]
+    },
+    "WebViewManager": {
+        "className": "WebViewManager",
+        "ownProperties": [
+            "_parser",
+            "closeAll",
+            "closeWebView",
+            "createWebView",
+            "getClassName",
+            "getObjectUuid",
+            "getWebView",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "WebViewManager",
+                "uuid": "{4b777479-4534-f1b9-a1b9-4536ca36ac7c}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getWebViewManager()"
+        ]
+    },
+    "UserCreatedPDU": {
+        "className": "UserCreatedPDU",
+        "ownProperties": [
+            "_parser",
+            "activateScenario",
+            "addSimplePdu",
+            "colorPDU",
+            "deletePDU",
+            "deleteScenarioBtn_clicked",
+            "editPDU",
+            "firePDU",
+            "getClassName",
+            "getObjectUuid",
+            "newScenarioBtn_clicked",
+            "registerObjectEvent",
+            "scenarioInfoBtn_clicked",
+            "setDisabled",
+            "setScenarioDescription",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "toggleOpenListWindowBtn",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "UserCreatedPDU",
+                "uuid": "{5c57d017-53fd-dca2-a0b9-453c4dafadcd}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getUserCreatedPDU()"
+        ]
+    },
+    "ToolBar": {
+        "className": "ToolBar",
+        "ownProperties": [
+            "_parser",
+            "addItem",
+            "count",
+            "getClassName",
+            "getItemByUuid",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "removeItemUuid",
+            "setItemAtEnabled",
+            "setItemAtVisible",
+            "setItemEnabled",
+            "setItemVisible",
+            "setVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "ToolBar",
+                "uuid": "{75e02574-b574-ecb7-8cc3-45ab2ca5b4af}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getSecondaryToolBar()"
+        ]
+    },
+    "SimulationToolbar": {
+        "className": "SimulationToolbar",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "isEventListOn",
+            "registerObjectEvent",
+            "resetNetwork",
+            "setDisabled",
+            "setEventListToggle",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "SimulationToolbar",
+                "uuid": "{ca27164d-374c-ff45-3fb9-45c31c21cfd7}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getSimulationToolbar()"
+        ]
+    },
+    "SimulationPanel": {
+        "className": "SimulationPanel",
+        "ownProperties": [
+            "_parser",
+            "back",
+            "changePlaySpeed",
+            "forward",
+            "getClassName",
+            "getObjectUuid",
+            "isPlaying",
+            "play",
+            "populateEventList",
+            "registerObjectEvent",
+            "resetSimulation",
+            "setAllFilters",
+            "setConstantDelay",
+            "setDisabled",
+            "setFilter",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "showFiltersDialog",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "SimulationPanel",
+                "uuid": "{c6ee1f02-22a3-1b43-9ec3-45d4756cc755}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getSimulationPanel()"
+        ]
+    },
+    "RealtimeToolbar": {
+        "className": "RealtimeToolbar",
+        "ownProperties": [
+            "_parser",
+            "fastForwardTime",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "resetNetwork",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "RealtimeToolbar",
+                "uuid": "{8b51fe15-dace-0b3a-3eb9-4556054741ab}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getRealtimeToolbar()"
+        ]
+    },
+    "RSSwitch": {
+        "className": "RSSwitch",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "showRealtimeMode",
+            "showSimulationMode",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "RSSwitch",
+                "uuid": "{e1d340b9-d916-a0ba-9dc3-45faa9457d38}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getRSSwitch()"
+        ]
+    },
+    "PhysicalToolbar": {
+        "className": "PhysicalToolbar",
+        "ownProperties": [
+            "_parser",
+            "addCity",
+            "addCloset",
+            "addGrid",
+            "getClassName",
+            "getObjectUuid",
+            "moveObject",
+            "registerObjectEvent",
+            "setBGImage",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "showPhysicalLocationDialog",
+            "switchToHomeRack",
+            "switchToTopView",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PhysicalToolbar",
+                "uuid": "{b28411ac-a6e2-72d1-3cb9-459b5c7fc10a}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getPhysicalToolbar()"
+        ]
+    },
+    "PhysicalLocationDialog": {
+        "className": "PhysicalLocationDialog",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "jumpBtn_clicked",
+            "refreshTree",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PhysicalLocationDialog",
+                "uuid": "{06dcf198-a0d6-ef46-a1c3-45f21b3fc724}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getPhysicalLocationDialog()"
+        ]
+    },
+    "PLSwitch": {
+        "className": "PLSwitch",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "showLogicalMode",
+            "showPhysicalMode",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PLSwitch",
+                "uuid": "{3d0ad13e-5dde-37b9-9cc3-454d80a994a8}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getPLSwitch()"
+        ]
+    },
+    "PDUListWindow": {
+        "className": "PDUListWindow",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "PDUListWindow",
+                "uuid": "{ce96c4e9-db9f-c07c-a2c3-45a44dfdbe11}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getPDUListWindow()"
+        ]
+    },
+    "NetworkComponentBox": {
+        "className": "NetworkComponentBox",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getConnectionTypes",
+            "getDeviceModels",
+            "getDeviceTypes",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setAllWidgetsDisable",
+            "setAllWidgetsVisible",
+            "setDisabled",
+            "setFrameVisible",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "NetworkComponentBox",
+                "uuid": "{f3f9f5e8-0a9a-7f03-40b9-45160dcada16}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getNetworkComponentBox()"
+        ]
+    },
+    "MenuBar": {
+        "className": "MenuBar",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getEditPopupMenu",
+            "getExtensionsIPCPopupMenu",
+            "getExtensionsMUPopupMenu",
+            "getExtensionsPopupMenu",
+            "getExtensionsScriptingPopupMenu",
+            "getFilePopupMenu",
+            "getFileRecentFilesPopupMenu",
+            "getHelpPopupMenu",
+            "getObjectUuid",
+            "getOptionsPopupMenu",
+            "getToolsPopupMenu",
+            "getViewPopupMenu",
+            "getViewToolbarsPopupMenu",
+            "getViewZoomPopupMenu",
+            "isVisible",
+            "registerObjectEvent",
+            "setVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "MenuBar",
+                "uuid": "{49a48844-b798-a25d-d2b9-45fbfcbf0a3f}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getMenuBar()"
+        ]
+    },
+    "Menu": {
+        "className": "Menu",
+        "ownProperties": [
+            "_parser",
+            "count",
+            "getClassName",
+            "getMenuItemAt",
+            "getMenuItemByName",
+            "getMenuItemByUuid",
+            "getMenuItemUuid",
+            "getObjectUuid",
+            "insertItem",
+            "registerObjectEvent",
+            "removeItem",
+            "removeItemUuid",
+            "setItemEnabled",
+            "setItemEnabledUuid",
+            "setItemVisible",
+            "setItemVisibleUuid",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Menu",
+                "uuid": "{fbd341c8-ff60-774b-d4b9-45a495924545}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "MenuBar",
+                    "uuid": "{49a48844-b798-a25d-d2b9-45fbfcbf0a3f}"
+                }
+            },
+            "getEditPopupMenu()"
+        ]
+    },
+    "MenuItem": {
+        "className": "MenuItem",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getLabel",
+            "getObjectUuid",
+            "getUuid",
+            "registerObjectEvent",
+            "removeItem",
+            "setEnabled",
+            "setVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "MenuItem",
+                "uuid": "{69608576-58de-dc76-b3b9-45f4c3ae1162}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Menu",
+                    "uuid": "{fbd341c8-ff60-774b-d4b9-45a495924545}"
+                }
+            },
+            "getMenuItemAt(4)"
+        ]
+    },
+    "LogicalToolbar": {
+        "className": "LogicalToolbar",
+        "ownProperties": [
+            "_parser",
+            "createCluster",
+            "getClassName",
+            "getObjectUuid",
+            "moveBack",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "showViewPort",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "LogicalToolbar",
+                "uuid": "{8d601850-fb34-4a98-3db9-455d60194eb0}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getLogicalToolbar()"
+        ]
+    },
+    "InfoDialog": {
+        "className": "InfoDialog",
+        "ownProperties": [
+            "_parser",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "InfoDialog",
+                "uuid": "{cad7131c-75d2-ac1f-9fc3-45e5200e2e13}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getInfoDialog()"
+        ]
+    },
+    "DialogManager": {
+        "className": "DialogManager",
+        "ownProperties": [
+            "_parser",
+            "closeAll",
+            "getClassName",
+            "getCurrentDialog",
+            "getDialog",
+            "getFocusedDialogName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "DialogManager",
+                "uuid": "{06532df2-3091-6aac-d43b-46fc91e9d9c8}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getDialogManager()"
+        ]
+    },
+    "CommonToolbar": {
+        "className": "CommonToolbar",
+        "ownProperties": [
+            "_parser",
+            "changeState",
+            "getClassName",
+            "getObjectUuid",
+            "registerObjectEvent",
+            "setDisabled",
+            "setVisible",
+            "setWidgetDisable",
+            "setWidgetVisible",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "CommonToolbar",
+                "uuid": "{92fc6239-f159-5cc4-3bb9-45a0b6f49f34}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getCommonToolbar()"
+        ]
+    },
+    "Workspace": {
+        "className": "Workspace",
+        "ownProperties": [
+            "_parser",
+            "devicesAt",
+            "fillColor",
+            "getClassName",
+            "getCurrentPhysicalObject",
+            "getEnvironmentTimeInSeconds",
+            "getGeoView",
+            "getLogicalWorkspace",
+            "getObjectUuid",
+            "getProperties",
+            "getProperty",
+            "getRackView",
+            "getRootPhysicalObject",
+            "getZLevel",
+            "hasProperty",
+            "isGeoView",
+            "isLogicalView",
+            "isRackView",
+            "moveItemInWorkspace",
+            "pauseEnvironmentTime",
+            "registerObjectEvent",
+            "resetEnvironment",
+            "resumeEnvironmentTime",
+            "setBaseZLevel",
+            "setComponentOpacity",
+            "setComponentRotation",
+            "setLogicalBackgroundPath",
+            "setParentGraphicFromComponent",
+            "setProperty",
+            "setThingCustomText",
+            "setThingRotation",
+            "setVisible",
+            "switchToPhysicalObject",
+            "unregisterObjectEvent",
+            "zoomIn",
+            "zoomOut",
+            "zoomReset",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Workspace",
+                "uuid": "{3264e721-f74a-bd79-a4c3-45a95d6a55f6}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "AppWindow",
+                    "uuid": "{874a86c8-653a-6653-3ab9-459dae0fd421}"
+                }
+            },
+            "getActiveWorkspace()"
+        ]
+    },
+    "LogicalWorkspace": {
+        "className": "LogicalWorkspace",
+        "ownProperties": [
+            "_parser",
+            "addCluster",
+            "addDevice",
+            "addNote",
+            "addRemoteNetwork",
+            "addTextPopup",
+            "autoConnectDevices",
+            "centerOn",
+            "centerOnComponentByName",
+            "changeNoteText",
+            "clearLayer",
+            "createLink",
+            "deleteLink",
+            "drawCircle",
+            "drawLine",
+            "getCanvasEllipseIds",
+            "getCanvasItemIds",
+            "getCanvasItemRealX",
+            "getCanvasItemRealY",
+            "getCanvasItemX",
+            "getCanvasItemY",
+            "getCanvasLineIds",
+            "getCanvasNoteIds",
+            "getCanvasNoteText",
+            "getCanvasPolygonIds",
+            "getCanvasRectIds",
+            "getClassName",
+            "getCluster",
+            "getClusterForItem",
+            "getClusterFromItem",
+            "getClusterIdForItem",
+            "getClusterItemId",
+            "getComponentChildCountFor",
+            "getComponentChildForAt",
+            "getComponentChildForByName",
+            "getComponentItem",
+            "getComponentItemsCount",
+            "getCurrentCluster",
+            "getEllipseItemData",
+            "getIncNoteZOrder",
+            "getLayerInbetweenComponents",
+            "getLineItemData",
+            "getMUItemCount",
+            "getObjectUuid",
+            "getPolygonItemData",
+            "getRectItemData",
+            "getRootCluster",
+            "getState",
+            "getUnusedLayer",
+            "getWorkspaceImage",
+            "isLayerUsed",
+            "moveCanvasItemBy",
+            "moveItemToCluster",
+            "moveRemoteNetwork",
+            "registerObjectEvent",
+            "removeCanvasItem",
+            "removeCluster",
+            "removeDevice",
+            "removeRemoteNetwork",
+            "removeTextPopup",
+            "setCanvasItemRealPos",
+            "setCanvasItemX",
+            "setCanvasItemY",
+            "setDeviceCustomImage",
+            "showClusterContents",
+            "unCluster",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "LogicalWorkspace",
+                "uuid": "{16940be8-e9a0-63f4-a5c3-457fe19db436}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "Workspace",
+                    "uuid": "{3264e721-f74a-bd79-a4c3-45a95d6a55f6}"
+                }
+            },
+            "getLogicalWorkspace()"
+        ]
+    },
+    "Cluster": {
+        "className": "Cluster",
+        "ownProperties": [
+            "_parser",
+            "getCenterXCoordinate",
+            "getCenterYCoordinate",
+            "getChildClusterAt",
+            "getChildClusterCount",
+            "getClassName",
+            "getIconPath",
+            "getId",
+            "getName",
+            "getObjectUuid",
+            "getParentCluster",
+            "getXCoordinate",
+            "getYCoordinate",
+            "moveToLocation",
+            "moveToLocationCentered",
+            "registerObjectEvent",
+            "setIconPath",
+            "setName",
+            "unregisterObjectEvent",
+            "registerEvent",
+            "registerDelegate",
+            "unregisterEvent",
+            "unregisterDelegate"
+        ],
+        "ownKeys": [
+            "_parser"
+        ],
+        "object": {
+            "_parser": {
+                "className": "Cluster",
+                "uuid": "{96865a30-95fe-5cfb-35cd-4557278d9169}"
+            }
+        },
+        "via": [
+            {
+                "_parser": {
+                    "className": "LogicalWorkspace",
+                    "uuid": "{16940be8-e9a0-63f4-a5c3-457fe19db436}"
+                }
+            },
+            "getRootCluster()"
+        ]
+    }
+}
